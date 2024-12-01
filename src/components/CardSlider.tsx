@@ -1,7 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
+import {Link} from "@nextui-org/react";
 import CardWithDivider from "./Cards/CardWithDivider"; // Adjust the import path if needed
 
 interface CardSliderProps {
+  title: string;
+  titleLink: string;
   cards: Array<{
     title: string;
     subtitle: string;
@@ -12,7 +15,7 @@ interface CardSliderProps {
   }>;
 }
 
-const CardSlider: React.FC<CardSliderProps> = ({ cards }) => {
+const CardSlider: React.FC<CardSliderProps> = ({ title, titleLink, cards }) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [cardWidth, setCardWidth] = useState(300);
   const [visibleCards, setVisibleCards] = useState(1);
@@ -43,6 +46,11 @@ const CardSlider: React.FC<CardSliderProps> = ({ cards }) => {
 
   return (
     <div className="relative">
+      <div className="mt-2 mb-1 text-right">
+      <Link isBlock showAnchorIcon href={titleLink} color="primary">
+        {title}
+      </Link>
+      </div>
       <div className="flex overflow-x-scroll scrollbar-hide" ref={sliderRef}>
         {cards.map((card, index) => (
           <div key={index} className="m-2" style={{ minWidth: `${cardWidth}px` }}>

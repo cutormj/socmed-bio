@@ -43,7 +43,7 @@ const HomePage = () => {
 
   return (
     <div className="grid grid-cols-12 grid-rows-8 gap-0">
-      <div className="col-span-12">
+      {/* <div className="col-span-12">
         <Navbar onMenuOpenChange={setIsMenuOpen}>
           <NavbarContent>
             <NavbarMenuToggle
@@ -51,7 +51,7 @@ const HomePage = () => {
               className="sm:hidden"
             />
             <NavbarBrand>
-              <p className="font-bold text-inherit">ACME</p>
+              <p className="font-bold text-inherit"></p>
             </NavbarBrand>
           </NavbarContent>
 
@@ -99,11 +99,11 @@ const HomePage = () => {
             ))}
           </NavbarMenu>
         </Navbar>
-      </div>
+      </div> */}
       
         <div className="col-span-12 row-span-7 row-start-2 flex justify-center items-center"> 
           <div className="w-full max-w-screen-lg"> 
-            <CardSlider cards={cards} /> 
+            <CardSlider title="Hiring" titleLink="#" cards={cards} /> 
           </div> 
         </div> 
       
